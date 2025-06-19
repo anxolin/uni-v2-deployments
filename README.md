@@ -15,6 +15,7 @@ https://book.getfoundry.sh/
 
 ## Usage
 
+
 ### Build
 
 ```shell
@@ -63,12 +64,29 @@ forge script script/CreateTestPool.s.sol:UniswapV2FactoryScript \
   --private-key $PRIVATE_KEY
 ```
 
+
 ### Generate networks.json
 After deployment of a new contract, make sure to run this script to update the `networks.json` file.
 
 ```shell
 ./dev/generate-networks-file.sh
 ```
+
+## WIP: deploy with zkSync (in lens)
+
+To work with zkSync, you need to import the private key and change the default profile:
+
+```shell
+# Build the contracts
+FOUNDRY_PROFILE=zksync forge build --zksync
+
+# Deploy the contracts
+FOUNDRY_PROFILE=zksync forge script script/UniswapV2Factory.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY
+
+# 🔥 This FAILS (both using compatibility mode and not)
+# https://explorer.lens.xyz/tx/0x5e565b9989936a16961a6c03a93cfaf7526dbbc5624260a919f61dadfa8e6f8f
+```
+
 
 ### Cast
 

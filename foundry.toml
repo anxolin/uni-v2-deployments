@@ -11,6 +11,14 @@ cbor_metadata = false
 optimizer = true
 optimizer_runs = 1000000
 
+[profile.zksync]
+src = 'src'
+libs = ['lib']
+solc-version = "0.8.24"
+fallback_oz = true
+is_system = false
+mode = "3"
+
 # Remappings
 remappings = [
     "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"
