@@ -48,11 +48,20 @@ anvil
 ### Deploy
 
 ```shell
-# Deploy UniswapV2Factory
+# Deploy UniswapV2Factory. After the dry-run, you can add:
+#  --broadcast                                      to deploy the contract
+#  --verify --etherscan-api-key <api-key>           to verify the contract on etherscan
 forge script script/UniswapV2Factory.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 
 # Deploy Test Pool
 UNIV2_FACTORY_ADDRESS=<uniswap-v2-> forge script script/CreateTestPool.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+```
+
+### Generate networks.json
+After deployment of a new contract, make sure to run this script to update the `networks.json` file.
+
+```shell
+./dev/generate-networks-file.sh
 ```
 
 ### Cast
