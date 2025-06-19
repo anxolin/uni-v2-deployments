@@ -54,7 +54,13 @@ anvil
 forge script script/UniswapV2Factory.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 
 # Deploy Test Pool
-UNIV2_FACTORY_ADDRESS=<uniswap-v2-> forge script script/CreateTestPool.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+#  --broadcast                                      to deploy the contract
+#  --verify --etherscan-api-key <api-key>           to verify the contract on etherscan
+UNIV2_FACTORY_ADDRESS=<uniswap-v2> \
+MINTER=<minter-address> \
+forge script script/CreateTestPool.s.sol:UniswapV2FactoryScript \
+  --rpc-url $RPC_URL \
+  --private-key $PRIVATE_KEY
 ```
 
 ### Generate networks.json
