@@ -1,4 +1,10 @@
 {
+  "BasicERC20": {
+    "11155111": {
+      "address": "0x86a672ea2cfc692c8668877ffa055c63a692794f",
+      "transactionHash": "0x954d6df33df8c6cd760cafe896c578548f2d0edf99c5d1f53fde61ab93f67f6e"
+    }
+  },
   "UniswapV2Factory": {
     "11155111": {
       "address": "0x3127f1415aa8fe8663423cb67be8770f3e4bf0d8",
