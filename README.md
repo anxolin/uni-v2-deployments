@@ -48,7 +48,11 @@ anvil
 ### Deploy
 
 ```shell
+# Deploy UniswapV2Factory
 forge script script/UniswapV2Factory.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+
+# Deploy Test Pool
+UNIV2_FACTORY_ADDRESS=<uniswap-v2-> forge script script/CreateTestPool.s.sol:UniswapV2FactoryScript --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 ```
 
 ### Cast
