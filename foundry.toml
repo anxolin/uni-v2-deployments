@@ -3,4 +3,12 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+# Compiler options
+solc = "0.8.30"
+evm_version = "prague" # https://docs.soliditylang.org/en/v0.8.30/using-the-compiler.html#target-options
+bytecode_hash = "none"
+cbor_metadata = false
+optimizer = true
+optimizer_runs = 1000000
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
